@@ -12,6 +12,11 @@ You should consider yourself done after you can reproduce these steps below in y
 
 TODO
 
+## Homework
+
+- Add search field at the top to filter posts by their title
+- Enable post to be edited
+
 ## Useful resources:
 
 - [React.js - Introducing JSX](https://facebook.github.io/react/docs/introducing-jsx.html)
