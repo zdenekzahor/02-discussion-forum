@@ -16,6 +16,7 @@ TODO
 
 - Add search field at the top to filter posts by their title
 - Enable post to be edited
+- Enable tags to be removed from post
 
 ## Useful resources:
 

@@ -2,16 +2,19 @@
   {
     "id": 1,
     "title": "Does anyone know how to create child component?",
-    "message": "Hi, how can I show my custom button in my app?"
+    "message": "Hi, how can I show my custom button in my app?",
+    "tags": ["9e909ef31ef6d", "434737bf370d5", "769bc416cee59"]
   },
   {
     "id": 2,
     "title": "Error while updating state",
-    "message": "I have a list of people like this: [{id: 1, name: 'Jekyll'}, {id: 2, name: 'Hyde'}, ...] and I am adding new record by this.state.people.push({id: 3, name: 'Jack Kerouac'}) but nothing happens."
+    "message": "I have a list of people like this: [{id: 1, name: 'Jekyll'}, {id: 2, name: 'Hyde'}, ...] and I am adding new record by this.state.people.push({id: 3, name: 'Jack Kerouac'}) but nothing happens.",
+    "tags": ["9e909ef31ef6d", "284861e856a37"]
   },
   {
     "id": 3,
     "title": "Useful resources",
-    "message": "https://facebook.github.io/react/ all the way."
+    "message": "https://facebook.github.io/react/ all the way.",
+    "tags": []
   }
 ]}
