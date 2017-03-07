@@ -1,14 +1,19 @@
 import React, {PropTypes} from 'react';
 import {Card, CardHeader, CardText} from 'material-ui/Card';
-import Chip from 'material-ui/Chip';
 
 const PostItem = (props) => {
   const {title, message} = props.post;
   let tagElements = [];
 
   if (props.tags && props.tags.length) {
-    tagElements = props.tags.map((tag) => <Chip key={tag.id}>{tag.label}</Chip>);
+    // TODO: use Chip for tags: www.material-ui.com/#/components/chip
+    tagElements = props.tags.map((tag) => <span key={tag.id}>{tag.label}</span>);
   }
+
+  // TODO make it possible to show formatted message,
+  // e.g. "Hello <em>world</em>" - world will be shown as emphasized
+  // but try to keep security high by not allowing <script>alert('Heh');</script>
+  // can you find the solution?
 
   return (
     <Card>
