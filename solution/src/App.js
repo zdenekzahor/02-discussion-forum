@@ -34,12 +34,11 @@ class App extends Component {
     const posts= this.state.posts;
     const newPost = {...post, id: posts.length + 1};
 
-    // TODO add new post (newPost variable) to the list of posts
+    this.setState({posts: posts.concat([newPost])});
   }
 
   render() {
-    const {posts} = this.state;
-    // TODO show modal (AddPostModal) when user clicks on "Add Post"
+    const {posts, isAddingPost} = this.state;
 
     return (
       <MuiThemeProvider>
@@ -50,6 +49,12 @@ class App extends Component {
             iconElementRight={<AppPost onTap={this.handleAddPost} />}
           />
           <PostThread posts={posts} />
+          {isAddingPost &&
+            <AddPostModal
+              onClose={this.handleAddPostCancel}
+              onSubmit={this.handleAddPostSubmit}
+            />
+          }
         </div>
       </MuiThemeProvider>
     );
