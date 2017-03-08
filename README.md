@@ -10,7 +10,20 @@ You should consider yourself done after you can reproduce these steps below in y
 
 ## Practise & learn
 
-TODO
+Fork & clone it on your machine, then in the project directory:
+
+```
+npm install # takes some time to complete
+npm start
+```
+
+To run solution:
+
+```
+cd solution/
+npm install
+npm start # or PORT=3001 npm start to run in parallel with working app
+```
 
 ## Homework
 

@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
-import injectTapEventPlugin from 'react-tap-event-plugin';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import AppBar from 'material-ui/AppBar';
-import './App.css';
-import posts from './data/posts';
-import AppPost from './components/AddPost';
-import AddPostModal from './components/AddPostModal';
-import PostThread from './components/PostThread';
+import React, { Component } from "react";
+import injectTapEventPlugin from "react-tap-event-plugin";
+import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
+import AppBar from "material-ui/AppBar";
+import "./App.css";
+import posts from "./data/posts";
+import AppPost from "./components/AddPost";
+import AddPostModal from "./components/AddPostModal";
+import PostThread from "./components/PostThread";
 
 // Needed for onTouchTap
 // http://stackoverflow.com/a/34015469/988941
@@ -31,8 +31,8 @@ class App extends Component {
   }
 
   handleAddPostSubmit (post) {
-    const posts= this.state.posts;
-    const newPost = {...post, id: posts.length + 1};
+    const posts = this.state.posts;
+    const newPost = {...post, id: posts.length + 1, tags: []};
 
     this.setState({posts: posts.concat([newPost])});
   }

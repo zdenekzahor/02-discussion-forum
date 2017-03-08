@@ -1,6 +1,7 @@
-import React, {PropTypes} from 'react';
-import {Card, CardHeader, CardText} from 'material-ui/Card';
-import Chip from 'material-ui/Chip';
+import React, {PropTypes} from "react";
+import {Card, CardHeader, CardText} from "material-ui/Card";
+import Chip from "material-ui/Chip";
+import ReactMarkdown from "react-markdown";
 
 const PostItem = (props) => {
   const {title, message} = props.post;
@@ -9,8 +10,8 @@ const PostItem = (props) => {
   if (props.tags && props.tags.length) {
     tagElements = props.tags.map((tag) => {
       const styles = {
-        display: 'inline-block',
-        marginRight: '5px'
+        display: "inline-block",
+        marginRight: "5px"
       };
 
       return (
@@ -23,12 +24,12 @@ const PostItem = (props) => {
     <Card>
       <CardHeader
         title={title}
-        actAsExpander={true}
-        showExpandableButton={true}
+        actAsExpander
+        showExpandableButton
       />
       <CardText expandable>
         <div>
-          <p>{message}</p>
+          <ReactMarkdown source={message} />
         </div>
         <div>
           {tagElements}

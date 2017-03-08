@@ -1,7 +1,7 @@
-import React, {Component, PropTypes} from 'react';
-import Dialog from 'material-ui/Dialog';
-import FlatButton from 'material-ui/FlatButton';
-import TextField from 'material-ui/TextField';
+import React, {Component, PropTypes} from "react";
+import Dialog from "material-ui/Dialog";
+import FlatButton from "material-ui/FlatButton";
+import TextField from "material-ui/TextField";
 
 const newPost = {
   title: "",
@@ -60,7 +60,7 @@ class AddPostModal extends Component {
       />,
       <FlatButton
         label="Submit"
-        primary={true}
+        primary
         disabled={disabled}
         onTouchTap={this.handleSubmit}
       />

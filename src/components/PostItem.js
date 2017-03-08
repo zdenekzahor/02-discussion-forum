@@ -1,5 +1,5 @@
-import React, {PropTypes} from 'react';
-import {Card, CardHeader, CardText} from 'material-ui/Card';
+import React, {PropTypes} from "react";
+import {Card, CardHeader, CardText} from "material-ui/Card";
 
 const PostItem = (props) => {
   const {title, message} = props.post;
@@ -11,16 +11,16 @@ const PostItem = (props) => {
   }
 
   // TODO make it possible to show formatted message,
-  // e.g. "Hello <em>world</em>" - world will be shown as emphasized
-  // but try to keep security high by not allowing <script>alert('Heh');</script>
+  // e.g. "Hello *world*" - world will be shown as emphasized
+  // but try to keep security high by not allowing <script>alert("Heh");</script>
   // can you find the solution?
 
   return (
     <Card>
       <CardHeader
         title={title}
-        actAsExpander={true}
-        showExpandableButton={true}
+        actAsExpander
+        showExpandableButton
       />
       <CardText expandable>
         <div>

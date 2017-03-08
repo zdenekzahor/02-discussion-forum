@@ -1,5 +1,5 @@
-import React, {PropTypes} from 'react';
-import FlatButton from 'material-ui/FlatButton';
+import React, {PropTypes} from "react";
+import FlatButton from "material-ui/FlatButton";
 
 const AddPost = (props) => {
   const {onTap} = props;

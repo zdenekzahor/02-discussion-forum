@@ -1,6 +1,6 @@
-import React, {Component, PropTypes} from 'react';
-import PostItem from './PostItem';
-import tags from './../data/tags';
+import React, {Component, PropTypes} from "react";
+import PostItem from "./PostItem";
+import tags from "./../data/tags";
 
 class PostThread extends Component {
   render () {
