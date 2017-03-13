@@ -27,23 +27,28 @@ class App extends Component {
   }
 
   toggleAddPostModal(isAddingPost) {
-    this.setState({isAddingPost});
+    this.setState({isAddingPost: isAddingPost});
   }
 
   handleAddPostSubmit (post) {
     const posts = this.state.posts;
     const newPost = {...post, id: posts.length + 1, tags: []};
 
-    // TODO add new post (newPost variable) to the list of posts
+    posts.push(newPost);
+    this.setState({posts: posts});
   }
 
   render() {
     const {posts} = this.state;
-    // TODO show modal (AddPostModal) when user clicks on "Add Post"
+    let modal = null;
+    if (this.state.isAddingPost) {
+      modal = <AddPostModal onClose={this.handleAddPostCancel} onSubmit={this.handleAddPostSubmit}/>
+    }
 
     return (
       <MuiThemeProvider>
         <div>
+          {modal}
           <AppBar
             title="React.js Forum"
             iconElementLeft={<span />}

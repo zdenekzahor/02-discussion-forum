@@ -1,13 +1,13 @@
 import React, {PropTypes} from "react";
 import {Card, CardHeader, CardText} from "material-ui/Card";
+import Chip from 'material-ui/Chip';
 
 const PostItem = (props) => {
   const {title, message} = props.post;
   let tagElements = [];
 
   if (props.tags && props.tags.length) {
-    // TODO: use Chip for tags: www.material-ui.com/#/components/chip
-    tagElements = props.tags.map((tag) => <span key={tag.id}>{tag.label}</span>);
+    tagElements = props.tags.map((tag) => <Chip key={tag.id}>{tag.label}</Chip>);
   }
 
   // TODO make it possible to show formatted message,
