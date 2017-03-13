@@ -7,7 +7,7 @@ class PostThread extends Component {
     const posts = this.props.posts.map((post) => {
       // try to render list of tags for each post as well
       const tagsForPost = post.tags.map((tagId) => tags[tagId]);
-      return <PostItem key={post.id} post={post} tags={tagsForPost}/>;
+      return <PostItem key={post.id} post={post} tags={tagsForPost} onRemoveTag={this.props.onRemoveTag}/>;
     });
 
     return <div>
@@ -17,7 +17,8 @@ class PostThread extends Component {
 }
 
 PostThread.propTypes = {
-  posts: PropTypes.array.isRequired
+  posts: PropTypes.array.isRequired,
+  onRemoveTag: PropTypes.func.isRequired,
 };
 
 export default PostThread;

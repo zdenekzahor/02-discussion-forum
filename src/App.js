@@ -19,6 +19,7 @@ class App extends Component {
     this.handleAddPost = this.toggleAddPostModal.bind(this, true);
     this.handleAddPostCancel = this.toggleAddPostModal.bind(this, false);
     this.handleAddPostSubmit = this.handleAddPostSubmit.bind(this);
+    this.handleRemoveTagFromPost = this.handleRemoveTagFromPost.bind(this);
 
     this.state = {
       isAddingPost: false,
@@ -38,6 +39,11 @@ class App extends Component {
     this.setState({posts: posts});
   }
 
+  handleRemoveTagFromPost(post, tagId) {
+    post.tags = post.tags.filter((id) => id !== tagId);
+    this.setState({posts: this.state.posts});
+  }
+
   render() {
     const {posts} = this.state;
     let modal = null;
@@ -54,7 +60,7 @@ class App extends Component {
             iconElementLeft={<span />}
             iconElementRight={<AppPost onTap={this.handleAddPost} />}
           />
-          <PostThread posts={posts} />
+          <PostThread posts={posts} onRemoveTag={this.handleRemoveTagFromPost}/>
         </div>
       </MuiThemeProvider>
     );

@@ -3,11 +3,15 @@ import {Card, CardHeader, CardText} from "material-ui/Card";
 import Chip from 'material-ui/Chip';
 
 const PostItem = (props) => {
+  const onRemoveTag = (tagId) => {
+    props.onRemoveTag(props.post, tagId);
+  };
+
   const {title, message} = props.post;
   let tagElements = [];
 
   if (props.tags && props.tags.length) {
-    tagElements = props.tags.map((tag) => <Chip key={tag.id}>{tag.label}</Chip>);
+    tagElements = props.tags.map((tag) => <Chip key={tag.id} onRequestDelete={() => onRemoveTag(tag.id)}>{tag.label}</Chip>);
   }
 
   // TODO make it possible to show formatted message,
@@ -36,7 +40,8 @@ const PostItem = (props) => {
 
 PostItem.propTypes = {
   post: PropTypes.object.isRequired,
-  tags: PropTypes.array
+  onRemoveTag: PropTypes.func.isRequired,
+  tags: PropTypes.array,
 };
 
 export default PostItem;
